@@ -17,13 +17,6 @@ jobs:
       # Generate a random number between -10 and 10 and validate it in the same step
       - name: Generate a random number and validate
         run: |
-          random_number=$((RANDOM % 21 - 10))
-          echo "Random number generated: $random_number"
-          if [ $random_number -lt 0 ]
-          then
-            echo "The random number is negative. The job will succeed."
-            exit 0
-          else
-            echo "The random number is positive. The job will fail."
-            exit 1
-          fi
+          echo "Showing error"
+          echo "::error file=app.js,line=10,col=15::Random error"
+          exit 0
