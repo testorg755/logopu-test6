@@ -14,15 +14,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Generate a random number between -10 and 10
-      - name: Generate a random number
-        id: random-number
-        run: echo "::set-output name=value::$(shuf -i -10-10 -n 1)"
-
-      # Check if the random number is negative or positive
-      - name: Check if the random number is negative or positive
+      # Generate a random number between -10 and 10 and validate it in the same step
+      - name: Generate a random number and validate
         run: |
-          if [ ${{ steps.random-number.outputs.value }} -lt 0 ]
+          random_number=$((RANDOM % 21 - 10))
+          echo "Random number generated: $random_number"
+          if [ $random_number -lt 0 ]
           then
             echo "The random number is negative. The job will succeed."
             exit 0
