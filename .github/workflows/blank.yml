@@ -1,22 +1,20 @@
-name: CI
+
+name: Matrix_failing_randomly
+
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  
   workflow_dispatch:
+#  push:
 
 jobs:
-  build:
+  test:
+    strategy:
+      matrix:
+        job: [1, 2, 3]
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      # Generate a random number between -10 and 10 and validate it in the same step
-      - name: Generate a random number and validate
+      - name: The random failing job
         run: |
-          echo "Showing error"
-          echo "::error file=app.js,line=10,col=15::Random error"
-          exit 0
+          exit $((RANDOM % 2))
