@@ -12,6 +12,7 @@ jobs:
     strategy:
       matrix:
         job: [1, 2, 3]
+      fail-fast: false
     runs-on: ubuntu-latest
 
     steps:
