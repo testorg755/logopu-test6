@@ -17,5 +17,4 @@ jobs:
     steps:
       - name: The random failing job
         run: |
-          echo ${{ github.workflow }}
-          echo ${{ github.ref }}
+          echo ${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-
