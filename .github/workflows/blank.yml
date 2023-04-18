@@ -17,4 +17,5 @@ jobs:
     steps:
       - name: The random failing job
         run: |
-          exit $((RANDOM % 2))
+          echo ${{ github.workflow }}
+          echo ${{ github.ref }}
