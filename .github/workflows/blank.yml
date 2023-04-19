@@ -25,4 +25,4 @@ jobs:
           #!/bin/bash
 
           echo "GitHub Event:"
-          echo "${{ github.event }}" | jq .
+          echo "${{ github.event }}" | jq --raw-output --compact-output '. | fromjson'
