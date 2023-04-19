@@ -20,9 +20,9 @@ jobs:
       cancel-in-progress: true
 
     steps:
-      - name: The random failing job
-        run: |
-          #!/bin/bash
+      - name: Show GitHub context   
+        env: 
+          GITHUB_CONTEXT: ${{ toJson(github) }}   
+        run: echo "$GITHUB_CONTEXT"
+        shell: bash
 
-          echo "GitHub Event:"
-          echo "${{ github.event }}" | jq --raw-output --compact-output '. | fromjson'
