@@ -22,4 +22,4 @@ jobs:
     steps:
       - name: The random failing job
         run: |
-          echo ${{ github.event }}
+          echo ${{ github.event }} | jq 
