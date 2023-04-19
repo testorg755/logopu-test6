@@ -19,3 +19,4 @@ jobs:
       - name: The random failing job
         run: |
           echo ${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}--${{ github.workflow }}-
+          sleep 300
