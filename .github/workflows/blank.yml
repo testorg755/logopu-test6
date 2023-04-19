@@ -8,6 +8,10 @@ on:
   pull_request:
   merge_group:
 
+concurrency:
+      group: run-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}-${{ github.ref }}-${{ github.workflow }}--${{ github.workflow }}-
+      cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
