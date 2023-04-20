@@ -22,8 +22,8 @@ jobs:
     steps:
       - name: Show GitHub context   
         env: 
-          GITHUB_CONTEXT: ${{ toJson(github) }}   
+          GITHUB_REF: ${{ github.ref }}
         run: |
-           echo ${{ toJson(github) }}
+           echo ${{ github.ref }}
         shell: bash
 
