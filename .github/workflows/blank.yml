@@ -24,6 +24,6 @@ jobs:
         env: 
           GITHUB_REF: ${{ github.ref }}
         run: |
-           echo ${{ env.GITHUB_REF }}
+           echo $GITHUB_REF
         shell: bash
 
