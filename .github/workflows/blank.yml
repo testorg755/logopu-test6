@@ -1,10 +1,6 @@
 name: Build Docker Image
 
-on:
-  push:
-    branches:
-      - main  # Adjust with your branch
-  repository_dispatch:
+on: [push, repository_dispatch]
 
 jobs:
   build:
