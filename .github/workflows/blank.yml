@@ -4,11 +4,11 @@ on: [push, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: arc-runner-set
     strategy:
       matrix:
-        node-version: [1,2,3,4,5,6,7,8,9,10]  # Define the versions or environments
-        os-version: [1,2,3,4]  # Define the versions or environments
+        node-version: [1]  # Define the versions or environments
+        os-version: [1]  # Define the versions or environments
       max-parallel: 5
 
     steps:
