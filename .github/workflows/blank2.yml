@@ -1,0 +1,19 @@
+name: Build Docker Image
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: arc-runner-set
+    strategy:
+      matrix:
+        node-version: [1]  # Define the versions or environments
+        os-version: [1]  # Define the versions or environments
+      max-parallel: 5
+
+    steps:
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 12.x
+    
