@@ -1,6 +1,6 @@
-name: Build Docker Image
+name: Hosted
 
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -12,8 +12,7 @@ jobs:
       max-parallel: 5
 
     steps:
-    - name: Set up Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 12.x
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello!;sleep 30
     
